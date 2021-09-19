@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+.default {
+  --main-background: hsl(222, 26%, 31%);
+  --keypad-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --key-bg-main: hsl(225, 21%, 49%);
+  --key-bg-red: hsl(6, 63%, 50%);
+  --key-bg: hsl(30, 25%, 89%);
+  --text-main: hsl(221, 14%, 31%);
+  --secondary-text: white;
+}
+
+.theme-2 {
+  --main-background: hsl(0, 0%, 90%);
+  --keypad-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+  --key-bg-main: hsl(185, 42%, 37%);
+  --key-bg-red: hsl(25, 98%, 40%);
+  --key-bg: hsl(45, 7%, 89%);
+  --text-main: hsl(60, 10%, 19%);
+  --secondary-text: hsl(60, 10%, 19%);
+}
+
+.theme-3 {
+  --main-background: hsl(268, 75%, 9%);
+  --keypad-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+  --key-bg-main: hsl(281, 89%, 26%);
+  --key-bg-red: hsl(176, 100%, 44%);
+  --key-bg: hsl(268, 47%, 21%);
+  --text-main: hsl(52, 100%, 62%);
+  --secondary-text: hsl(52, 100%, 62%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 25px;
+  background-color: var(--main-background);
+  font-family: 'Spartan', sans-serif;
+  color: var(--secondary-text);
+}
+
+
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-direction: column;
+}
+
+.app {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading.flex {
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.heading h1 {
+  font-size: 32px;
+}
+
+.switcher {
+  font-size: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 70px);
+  grid-template-rows: repeat(2, 20px);
+  grid-template-areas: "theme labels"
+  "theme inputs";
+}
+
+.switcher p {
+  grid-area: theme;
+  align-self: center;
+  text-transform: uppercase;
+}
+
+.labels {
+  grid-area: labels;
+  text-align: center;
+}
+
+.labels label {
+  margin: 0 5px 0 8px;
+}
+
+.inputs {
+  grid-area: inputs;
+  text-align: center;
+  position: relative;
+}
+
+.inputs input {
+  margin: 0 3px 0 4px;
+  transform: scale(2);
+  opacity: 0;
+  z-index: 1;
+}
+
+.red-slider {
+  position: absolute;
+  width: 70px;
+  height: 20px;
+  border-radius: 20px;
+  
+  background-color: var(--key-bg-main);
+  top: -4px;
+  opacity: 1;
+  z-index: -1;
+  padding: 0 2px;
+}
+
+.red-slider div { background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.dot {
+  transition: all 0.2s ease;
+}
+
+.screen {
+  background-color: var(--screen-bg);
+  padding: 20px 10px;
+  text-align: right;
+  border-radius: 10px;
+  height: 80px;
+}
+
+.grid-app {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-content: center;
+  background-color: var(--keypad-bg);
+  border-radius: 10px;
+  margin-top: 10px;
+  gap: 20px;
+  padding: 20px;
+  grid-template-areas: 
+  "seven eight ts3a del"
+  "four five six plus"
+  "one two three minus"
+  "dec zero devided multiply"
+  "reset reset equal equal"
+  ;
+}
+
+.btn {
+  text-align: center;
+  color: var(--text-main);
+  text-decoration: none;
+  background-color: var(--key-bg);
+  padding: 15px 25px;
+  border-radius: 10px;
+}
+
+.no0 {
+  grid-area: zero;
+}
+
+.no1 {
+  grid-area: one;
+}
+
+.no2 {
+  grid-area: two;
+}
+
+.no3 {
+  grid-area: three;
+}
+
+.no4 {
+  grid-area: four;
+}
+
+.no5 {
+  grid-area: five;
+}
+
+.no6 {
+  grid-area: six;
+}
+
+.no7 {
+  grid-area: seven;
+}
+
+.no8 {
+  grid-area: eight;
+}
+
+.no9 {
+  grid-area: ts3a;
+}
+
+.btn-del {
+  grid-area: del;
+  background-color: var(--key-bg-main);
+  color: var(--secondary-text);
+  font-size: 18px;
+}
+
+.btn-plus {
+  grid-area: plus;
+}
+.btn-minus {
+  grid-area: minus;
+}
+.btn-devided {
+  grid-area: devided;
+}
+
+.btn-multiply {
+  grid-area: multiply;
+}
+
+.btn-equal {
+  grid-area: equal;
+  background-color: var(--key-bg-red);
+  color: var(--secondary-text);
+  font-size: 18px;
+}
+
+.btn-reset {
+  grid-area: reset;
+  background-color: var(--key-bg-main);
+  color: var(--secondary-text);
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.btn-dec {
+  grid-area: dec;
+}
+
+@media (max-width: 500px) {
+  .grid-app {
+    gap: 7px;
+  }
+
+  .btn {
+    padding: 15px 19px;
+  }
+}

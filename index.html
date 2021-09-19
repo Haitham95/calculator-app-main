@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="default">
+  <div class="layout">
+    <div class="app">
+      <div class="heading flex">
+        <h1>calc</h1>
+        <div class="switcher">
+          <p>theme</p>
+
+          <div class="labels">
+            <label for="theme-1">1</label>
+            <label for="theme-2">2</label>
+            <label for="theme-3">3</label>
+          </div>
+          <div class="inputs">
+            <input type="radio" name="theme-1" id="theme-1" checked>
+            <input type="radio" name="theme-2" id="theme-2">
+            <input type="radio" name="theme-3" id="theme-3">
+            <div class="red-slider">
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen">
+        <h2>0</h2>
+      </div>
+      <div class="grid-app">
+        <a href="#" class="btn no0">0</a>
+        <a href="#" class="btn no1">1</a>
+        <a href="#" class="btn no2">2</a>
+        <a href="#" class="btn no3">3</a>
+        <a href="#" class="btn no4">4</a>
+        <a href="#" class="btn no5">5</a>
+        <a href="#" class="btn no6">6</a>
+        <a href="#" class="btn no7">7</a>
+        <a href="#" class="btn no8">8</a>
+        <a href="#" class="btn no9">9</a>
+        <a href="#" class="btn btn-del">Del</a>
+        <a href="#" class="btn btn-dec">.</a>
+        <a href="#" class="btn btn-plus">+</a>
+        <a href="#" class="btn btn-minus">-</a>
+        <a href="#" class="btn btn-multiply">*</a>
+        <a href="#" class="btn btn-devided">/</a>
+        <a href="#" class="btn btn-equal">=</a>
+        <a href="#" class="btn btn-reset">Reset</a>
+  
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Haitham95">Haitham Sayed</a>.
+  </div>
+</body>
+</html>
